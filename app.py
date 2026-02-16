@@ -19,10 +19,9 @@ def get_gsheet_client():
         "https://www.googleapis.com/auth/spreadsheets",
         "https://www.googleapis.com/auth/drive"
     ]
-    creds = Credentials.from_service_account_file(
-        "service_account.json",
-        scopes=scopes
-    )
+    creds = Credentials.from_service_account_info(
+    st.secrets["gcp_service_account"],
+    scopes=["https://www.googleapis.com/auth/spreadsheets"])
     return gspread.authorize(creds)
 
 @st.cache_data(show_spinner=False)
