@@ -1,0 +1,10 @@
+# Secrets
+service_account.json
+
+# Python
+__pycache__/
+*.pyc
+.env
+
+# Streamlit
+.streamlit/
